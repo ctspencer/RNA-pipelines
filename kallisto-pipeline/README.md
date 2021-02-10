@@ -49,10 +49,23 @@ Collin Spencer 2021
 - Where samples were pulled from, summary table of results, and visualization are available in the jupyter notebook:
   - /als-omics/microglia_isoseq/collin/RNA-pipelines/kallisto-pipeline/sample_grabber_viz.ipynb
 
-
 ## Analysis file (short_long_correlation jupyter notebook)
+- location: /als-omics/microglia_isoseq/collin/RNA-pipelines/kallisto-pipeline/short_long_correlation.ipynb
+- This notebook contains all of the filtering steps and visualization of paired short and long read samples
+- Filtering steps:
+1. Remove samples that are not paired
+2. Remove transcripts that are not found in both short and long read counts 
+3. convert transcript abundance to TPM
+4. collapse transcript TPM to gene TPM 
+5. Convert PacBio ID's to ENSEMBL gene ID's
+6. Remove any duplicate genes (for DESEQ) 
+-Performed spearman correlations between matched samples with following filters: base (TPM > 0.5), low expression (0.5-10 TPM), medium expression (11-1000 TPM), high expression ( > 1000 TPM)
+-Plotted highly expressed reads as scatter plot w/ regression line 
+- Did some formatting of count files specific for DESEQ2 input (saved as short/long_read_DESEQ.csv) 
 
-## DESEQ output and graphs
-
+## DESEQ2 output and graphs
+- ran DESEQ2 between SVZ and MFG regions
+- results are output as DESEQ_results_{long/short}_read.csv
+- saved summary table, PCA, and volcano plots to /als-omics/microglia_isoseq/collin/RNA-pipelines/kallisto-pipeline/graphs
 
 
