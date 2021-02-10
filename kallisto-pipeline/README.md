@@ -37,6 +37,22 @@ you have a set of FASTQ files with the forms <sample>.R1.fastq.gz and <sample>.R
 
 you also have one or more transcript sets (in FASTA format) that you want to quantify for your samples. Specify these in the `config.yaml`.
 
+# Summary of rotation work 
+
+Collin Spencer 2021
+
+## Sample processing w/ kallisto and output
+- All short read samples were aligned using the kallisto pipeline to 4 reference fasta (SQANTI, pre-SQANTI, gencode_v32, and gencode_v32_polyA) 
+  - output dir: /sc/arion/projects/als-omics/microglia_isoseq/collin/RNA-pipelines/kallisto-pipeline/pipeline_results
+- The summary results of the pipeline are contained in {fasta}counts.Rdata and {fasta}matrix.RData
+- The counts.RData file for SQANTI was used for subsequent analysis
+- Where samples were pulled from, summary table of results, and visualization are available in the jupyter notebook:
+  - /als-omics/microglia_isoseq/collin/RNA-pipelines/kallisto-pipeline/sample_grabber_viz.ipynb
+
+
+## Analysis file (short_long_correlation jupyter notebook)
+
+## DESEQ output and graphs
 
 
 
